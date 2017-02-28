@@ -1,0 +1,81 @@
+.jumbotron{
+    height:85vh;
+    background: url('../images/jumbotron_placeholder.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.intro-container{
+    border-bottom:1px solid gray;    
+}
+
+.intro-heading h3{
+    margin-top: 38px;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+.intro-content p{
+    font-size: 16px;
+}
+
+.intro-button{
+    text-align: center;
+    border-bottom:1px solid #95989a;
+}
+
+.intro-button a{
+    border-radius:4px;
+    margin-bottom: 38px;
+    background-image: linear-gradient(to bottom, #5d9cec, #4a89dc);
+}
+
+.social-heading h3{
+    margin-top: 36px;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+.social-buttons ul li {
+    margin:0px 10px;
+    display: inline; 
+}
+
+.social-buttons ul li img{
+    height:61.5px;
+    width:61.5px;
+}
+
+.social-works-heading{
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 52.5px;
+}
+
+.social-frames ul{
+    text-align: center;
+}
+
+@media (min-width: 750px) {
+    .social-frames ul li{
+        display:inline;
+    }
+}
+
+@media (min-width: 1000px) {
+    .social-frames ul li{
+        margin:0px 30px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .social-frames ul li{
+        margin:0px;
+    }
+    
+    .push-frames{
+        margin:0px 123px;
+    }
+}
