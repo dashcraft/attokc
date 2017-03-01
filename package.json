@@ -9,6 +9,7 @@
     "ejs-locals": "^1.0.2",
     "jade": "^1.11.0",
     "keystone": "latest",
+    "keystone-email": "^1.0.5",
     "lodash": "^4.13.1",
     "node-sass": "latest",
     "node-sass-middleware": "latest",

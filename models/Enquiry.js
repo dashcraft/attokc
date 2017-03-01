@@ -43,16 +43,25 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 	keystone.list('User').model.find().where('isAdmin', true).exec(function (err, admins) {
 		if (err) return callback(err);
 		new keystone.Email({
+			transport: 'mailgun',
 			templateName: 'enquiry-notification',
 		}).send({
+			apiKey: 'key-eec72cf91d2efca74e2fe6bd4388a715',
+    		domain: 'sandbox91dd43145aa0435ba39b7d1159a97f56.mailgun.org',
 			to: admins,
 			from: {
-				name: 'ATT_OKC',
-				email: 'contact@att_okc.com',
+				name: 'ATT OKC',
+				email: 'donotreply@attokc.com',
 			},
-			subject: 'New Enquiry for ATT_OKC',
+			subject: 'New Enquiry for ATT OKC',
 			enquiry: enquiry,
-		}, callback);
+		}, function(err,result){
+			if (err) {
+        console.error('🤕 Mailgun test failed with error:\n', err);
+    } else {
+        console.log('📬 Successfully sent Mailgun test with result:\n', result);
+    }
+		});
 	});
 };
 
