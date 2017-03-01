@@ -1,0 +1,124 @@
+extends ../layouts/default
+
+block content
+  .u-max-full-width
+  .row
+    .six.columns
+      .row
+        .six.columns.logo
+          img(src='images/logo_placeholder.jpg')
+        // End of logo
+        .six.columns.social-nav-buttons
+          ul.no-list
+            li
+              a(href='#')
+                img.mini(src='images/favicon.png')
+            li
+              a(href='#')
+                img.mini(src='images/favicon.png')
+            li
+              a(href='#')
+                img.mini(src='images/favicon.png')
+        // social-nav-buttons
+      // End of row
+    // End of six columns
+    .six.columns.navigation
+      p Nav Placeholder
+      
+        <ul id='menu' class='no-list'>
+        <li><div><a href='#'>Home</a></div></li>
+        <li><div><a href='#'>About Us</a></div></li>
+        <li><div><a href='#'>Programs</a>
+        <ul>
+        <li><div>BJJ</div></li>
+        </ul>
+        </div>
+        </li>
+        <li><a href='#'>Schedule</a></li>
+        <li><a href='#'>Contact Us</a></li>
+        </ul>
+    // End of navigation
+  // End of row
+  .row
+    .twelve.columns.jumbotron
+      form
+        .row
+          .offset-by-two.eight.columns
+            h2.form-heading.center-content
+              | Contact Us To 
+              span.highlighted Start
+              |  Today
+          // twelve columns
+          .offset-by-one.ten.columns.center-content
+            input#nameInput(type='text', placeholder='First & Last Name')
+          .offset-by-one.ten.columns.center-content
+            input#emailInput(type='email', placeholder='Email')
+          .offset-by-one.ten.columns.center-content
+            input#phoneInput(type='tel', placeholder='Phone Number')
+          .offset-by-one.ten.columns.center-content
+            input.button(type='submit', value='START TRAINING TODAY')
+        // End of row
+    // End of jumbotron
+  // End of row
+  .container
+    .row.intro
+      .twelve.columns.intro-heading
+        h3.center-content American Top Team OKC
+      // End of intro-heading
+      .twelve.columns.intro-content
+        p.center-content
+          | American Top Team in Oklahoma City is the Premier MMA training facility used by mixed martial arts, brazilian jiujitsu competitors and other sports athletes alike! Come Join Us Today and see what all the fuss is about
+      // End of intro-content
+      .twelve.columns.intro-button
+        a.button(href='#') Join Now
+      // End of intro-button
+    // End of intro
+    .row.social
+      .twelve.columns.social-heading
+        h3.center-content Check Us Out On Social Media!
+      // End of social-heading
+      .twelve.columns.social-buttons
+        ul.no-list
+          li
+            a(href='#')
+              img(src='images/favicon.png')
+          li
+            a(href='#')
+              img(src='images/favicon.png')
+          li
+            a(href='#')
+              img(src='images/favicon.png')
+      // End of social-buttons
+      .twelve.columns.social-works
+        .row
+          .twelve.columns.recent-works
+            h4.center-content.social-works-heading Recent Works
+          // End of recent-works
+          .twelve.columns.social-frames
+            ul.no-list
+              li
+                img(src='images/frame_placeholder.jpg')
+              li
+                img.push-frames(src='images/frame_placeholder.jpg')
+              li
+                img(src='images/frame_placeholder.jpg')
+            ul.no-list
+              li
+                img(src='images/frame_placeholder.jpg')
+              li
+                img.push-frames(src='images/frame_placeholder.jpg')
+              li
+                img(src='images/frame_placeholder.jpg')
+            ul.no-list
+              li
+                img(src='images/frame_placeholder.jpg')
+              li
+                img.push-frames(src='images/frame_placeholder.jpg')
+              li
+                img(src='images/frame_placeholder.jpg')
+        // End of row
+      // End of social-works
+    // End of social
+  // End of container
+  .row
+    .twelve.columns.footer

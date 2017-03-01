@@ -36,10 +36,10 @@ exports = module.exports = function (app) {
 	// Views
 	app.get('/', routes.views.index);
 	//Not working
-	//app.get('/brazilianJiuJitsu', routes.views.brazilianJiuJitsu);
-	//app.get('/kickboxing', routes.views.kickboxing);
-	//app.get('/nogi', routes.views.nogi);
-	//app.get('/wrestling', routes.views.wrestling);
+	app.get('/bjj', routes.views.brazilianJiuJitsu);
+	app.get('/kickboxing', routes.views.kickboxing);
+	app.get('/nogi', routes.views.nogi);
+	app.get('/wrestling', routes.views.wrestling);
 	app.get('/kidsbjj', routes.views.kidsbjj);
 	app.get('/blog/:category?', routes.views.blog);
 	app.get('/blog/post/:post', routes.views.post);

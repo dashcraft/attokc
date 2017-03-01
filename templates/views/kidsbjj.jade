@@ -1,0 +1,47 @@
+extends ../layouts/default
+
+block content
+  .u-max-full-width
+  .row.nav
+    .twelve.columns
+      .nav-holder
+        span Fill with nav content
+      // nav-holder
+    // columns
+  // row nav
+  .row.page-title
+    .offset-by-one.six.columns.page-title-container
+      h2 Kids BJJ
+    // End of spotlight-instructor
+  // End of row
+  .row
+    .offset-by-one.six.columns.page-content
+      p
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, obcaecati, ullam, doloremque, labore sit qui natus aspernatur harum odit laborum necessitatibus beatae ipsum ut porro ea cum provident eos. Magni.
+      .row
+        .six.columns.photo-container
+          img.center-image.long-image(src='images/person-placeholder.jpg')
+        .six.columns.photo-container
+          img.center-image.long-image(src='images/person-placeholder.jpg')
+      // End of row
+    // End of offset-by-one six columns
+    .five.columns
+      form
+        .row
+          .offset-by-one.ten.columns
+            h2.form-heading.center-content.form-heading-top Contact Us To
+            h2.form-heading.center-content
+              span.highlighted Start
+              |  Today !
+          // twelve columns
+          .offset-by-one.ten.columns.center-content
+            input#nameInput(type='text', placeholder='First & Last Name')
+          .offset-by-one.ten.columns.center-content
+            input#emailInput(type='email', placeholder='Email')
+          .offset-by-one.ten.columns.center-content
+            input#phoneInput(type='tel', placeholder='Phone Number')
+          .offset-by-one.ten.columns.center-content
+            input.button(type='submit', value='START TRAINING TODAY')
+        // End of row
+    // End of five columns
+  // End of row

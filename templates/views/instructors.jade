@@ -1,0 +1,80 @@
+extends ../layouts/default
+
+block content
+  .u-max-full-width
+  .row.nav
+    .twelve.columns
+      .nav-holder
+        span Fill with nav content
+      // nav-holder
+    // columns
+  // row nav
+  .row.page-title
+    .offset-by-one.six.columns.page-title-container
+      h2 Instructors
+    // End of spotlight-instructor
+  // End of row
+  .row.spotlight
+    .offset-by-one.six.columns.spotlight-instructor
+      img.center-image.spotlight-photo(src='images/frame_placeholder.jpg')
+      h3.spotlight-headings Giulianno Galluppi
+      h4.spotlight-headings Head Coach / BJJ Instructor
+      p
+        | Guilianno Galluppi is a 3rd degree black belt in Brazilian JiuJitsu under Ricardo Liborio (Co-Founder of American Top Team). He started his journey in martial arts as a young boy, learning Judo. In Brazil it is common for children to enter into a martial arts discipline and compete, Giulianno excelled at Judo and quickly moved on to Brazilian JiuJitsu, winning several tournaments while climbing up the belt ranks.
+    // End of offset-by-one six columns
+    .five.columns
+      form
+        .row
+          .offset-by-one.ten.columns
+            h2.form-heading.center-content.form-heading-top WHAT ARE YOU WAITING FOR ?
+            h2.form-heading.center-content
+              span.highlighted Start
+              |  Today !
+          // twelve columns
+          .offset-by-one.ten.columns.center-content
+            input#nameInput(type='text', placeholder='First & Last Name')
+          .offset-by-one.ten.columns.center-content
+            input#emailInput(type='email', placeholder='Email')
+          .offset-by-one.ten.columns.center-content
+            input#phoneInput(type='tel', placeholder='Phone Number')
+          .offset-by-one.ten.columns.center-content
+            input.button(type='submit', value='START TRAINING TODAY')
+        // End of row
+    // End of five columns
+  // End of row
+  .row.staff
+    .offset-by-one.ten.columns
+      .row.staff-row
+        .four.columns.staff-bio
+          img.center-image(src='images/frame_placeholder.jpg')
+          h4.center-content.staff-name Hunter Muskrat
+          h5.center-content.staff-job Wrestling Instructor
+          p.center-content
+            | Brazilian JiuJitsu - (referred to as BJJ) is known as the gentle art. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, assumenda, iure similique magnam quia quis optio. Sit, iusto exercitationem alias molestias aspernatur repellendus quasi sapiente veritatis quibusdam vel accusamus mollitia?
+        // End of four columns
+        .four.columns.staff-bio
+          img.center-image(src='images/frame_placeholder.jpg')
+          h4.center-content.staff-name Brandon Frame
+          h5.center-content.staff-job No Gi Instructor
+          p.center-content
+            | Brazilian JiuJitsu - (referred to as BJJ) is known as the gentle art. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, assumenda, iure similique magnam quia quis optio. Sit, iusto exercitationem alias molestias aspernatur repellendus quasi sapiente veritatis quibusdam vel accusamus mollitia?
+        // End of four columns
+        .four.columns.staff-bio
+          img.center-image(src='images/frame_placeholder.jpg')
+          h4.center-content.staff-name TJ Taha
+          h5.center-content.staff-job Kickboxing Instructor
+          p.center-content
+            | Brazilian JiuJitsu - (referred to as BJJ) is known as the gentle art. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, assumenda, iure similique magnam quia quis optio. Sit, iusto exercitationem alias molestias aspernatur repellendus quasi sapiente veritatis quibusdam vel accusamus mollitia?
+        // End of four columns
+      // End of row
+      .row.staff-row
+        .four.columns.staff-bio
+          img.center-image(src='images/frame_placeholder.jpg')
+          h4.center-content.staff-name Shakir Mckillip
+          h5.center-content.staff-job Kids BJJ Instructor
+          p.center-content
+            | Brazilian JiuJitsu - (referred to as BJJ) is known as the gentle art. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, assumenda, iure similique magnam quia quis optio. Sit, iusto exercitationem alias molestias aspernatur repellendus quasi sapiente veritatis quibusdam vel accusamus mollitia?
+        // End of four columns
+      // End of row
+    // End of staff-bio
+  // End of staff

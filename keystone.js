@@ -4,7 +4,6 @@ require('dotenv').config();
 
 // Require keystone
 var keystone = require('keystone');
-var engine = require('ejs-locals');
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -18,11 +17,8 @@ keystone.init({
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
-	'custome engine': engine,
-	'view engine': 'ejs',
-
+	'view engine': 'jade',
 	'emails': 'templates/emails',
-
 	'auto update': true,
 	'session': true,
 	'auth': true,
