@@ -9,11 +9,19 @@ html
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 
-		title= title || 'ATT_OKC'
+		title= title || 'ATT OKC'
 		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
 		link(href="/styles/site.css", rel="stylesheet")
+		link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
+		link(rel='stylesheet', href='/bower_components/skeleton/css/normalize.css')
+		link(rel='stylesheet', href='/bower_components/skeleton/css/skeleton.css')
+		link(rel='stylesheet', href='styles/base.css')
+		link(rel='stylesheet', href='styles/programs.css')
+		link(rel='icon', type='image/png', href='images/favicon.png')
+		script(src='bower_components/jquery/dist/jquery.min.js')
+		script(src='bower_components/jquery-ui/jquery-ui.min.js')
 
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
