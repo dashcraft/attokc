@@ -98,14 +98,15 @@ form{
 input[type]{
     width:95%;
     color:#ffffff;
-    border-radius:.5px;
-    border:1px solid #ffffff;
+    font-size:16px;
+    border-radius:1px;
     background-color:#333333;
 }
 
 input[type='submit']{
-    background-color: #117bcb;
+    background-color: #5D9CEC;
     border-radius:1px;
+    font-size:17px;
 }
 
 
