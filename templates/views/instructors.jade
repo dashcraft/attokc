@@ -1,7 +1,8 @@
 extends ../layouts/default
 
 block content
-  .row.page-title
+  .row.u-cf
+  .row
     .offset-by-one.six.columns.page-title-container
       h2 Instructors
     // End of spotlight-instructor
@@ -15,22 +16,22 @@ block content
         | Guilianno Galluppi is a 3rd degree black belt in Brazilian JiuJitsu under Ricardo Liborio (Co-Founder of American Top Team). He started his journey in martial arts as a young boy, learning Judo. In Brazil it is common for children to enter into a martial arts discipline and compete, Giulianno excelled at Judo and quickly moved on to Brazilian JiuJitsu, winning several tournaments while climbing up the belt ranks.
     // End of offset-by-one six columns
     .five.columns
-      form
+      form.instructor-form
         .row
           .offset-by-one.ten.columns
-            h2.form-heading.center-content.form-heading-top WHAT ARE YOU WAITING FOR ?
+            h2.form-heading.center-content WHAT ARE YOU WAITING FOR?
             h2.form-heading.center-content
               span.highlighted Start
               |  Today !
           // twelve columns
           .offset-by-one.ten.columns.center-content
-            input#nameInput(type='text', placeholder='First & Last Name')
+            input#nameInput-Instructor(type='text', placeholder='First & Last Name')
           .offset-by-one.ten.columns.center-content
             input#emailInput(type='email', placeholder='Email')
           .offset-by-one.ten.columns.center-content
             input#phoneInput(type='tel', placeholder='Phone Number')
           .offset-by-one.ten.columns.center-content
-            input.button(type='submit', value='START TRAINING TODAY')
+            input.button.instructor-submit(type='submit', value='START TRAINING TODAY')
         // End of row
     // End of five columns
   // End of row

@@ -1,6 +1,7 @@
 extends ../layouts/default
 
 block content
+  .row.u-cf
   .row.page-title
     .offset-by-one.six.columns.page-title-container
       h2 Kick Boxing
@@ -18,7 +19,7 @@ block content
       // End of row
     // End of offset-by-one six columns
     .five.columns
-      form
+      form.instructor-form
         .row
           .offset-by-one.ten.columns
             h2.form-heading.center-content.form-heading-top Contact Us To
@@ -33,7 +34,7 @@ block content
           .offset-by-one.ten.columns.center-content
             input#phoneInput(type='tel', placeholder='Phone Number')
           .offset-by-one.ten.columns.center-content
-            input.button(type='submit', value='START TRAINING TODAY')
+            input.button.instructor-submit(type='submit', value='START TRAINING TODAY')
         // End of row
     // End of five columns
   // End of row
