@@ -57,10 +57,11 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 			enquiry: enquiry,
 		}, function(err,result){
 			if (err) {
-        console.error('🤕 Mailgun test failed with error:\n', err);
-    } else {
-        console.log('📬 Successfully sent Mailgun test with result:\n', result);
-    }
+        		console.error('🤕 Mailgun test failed with error:\n', err);
+		    } 
+		    else {
+		        console.log('📬 Successfully sent Mailgun test with result:\n', result);
+		    }
 		});
 	});
 };
