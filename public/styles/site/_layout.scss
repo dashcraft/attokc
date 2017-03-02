@@ -1,16 +1,19 @@
 #header {
-	margin-top: 30px;
+    height: 100px;
+
+    border-bottom: 1px solid #95989a;
 }
 
 #footer {
-	margin-top: 30px;
-	border-top: 1px solid #eeeeee;
-	padding-top: 30px;
-	color: #777777;
+    padding-top: 30px;
+    margin-top: 30px;
+
+    color: #777;
+    border-top: 1px solid #eee;
 }
 
-.gallery-image img{
+.gallery-image img {
     display: block;
-    max-width: 100%;
     height: auto;
+    max-width: 100%;
 }
