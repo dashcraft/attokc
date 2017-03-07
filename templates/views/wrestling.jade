@@ -2,6 +2,9 @@ extends ../layouts/default
 
 block content
       .row.u-cf
+      .row
+        .twelve.columns.mobile-div.center-content
+          a.button.button-mobile(href='/contact') Contact Us
       .row.page-title
         .offset-by-one.six.columns.page-title-container
           h2 Wrestling
@@ -18,7 +21,7 @@ block content
               img.center-image.long-image(src='images/person-placeholder.jpg')
           // End of row
         // End of offset-by-one six columns
-        .five.columns
+        .five.columns.program-form
           form.instructor-form
             .row
               .offset-by-one.ten.columns

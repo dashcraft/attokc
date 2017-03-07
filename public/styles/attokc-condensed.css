@@ -195,7 +195,7 @@ input[type]{
     background-color:#333333;
 }
 
-input[type='submit']{
+input[type='submit'], .button-mobile{
     background-color: #5D9CEC;
     border-radius:1px;
     font-size:17px;
@@ -380,6 +380,18 @@ input[type='submit']{
     margin-top: 42.5px;
 }
 
+.program-form{
+    display:none;
+}
+
+.mobile-div{
+    display:block;
+}
+
+.button-mobile{
+    color:white;
+}
+
 /* Larger than mobile */
 @media (min-width: 400px) {
   .no-list-1{
@@ -428,6 +440,14 @@ input[type='submit']{
 }
 
 @media (min-width: 750px) {
+    .program-form{
+        display:block;
+    }
+    
+    .mobile-div{
+        display:none;
+    }
+    
     .instructor-form{
         width:291px;
     }
