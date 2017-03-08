@@ -53,6 +53,25 @@ p{
 /*---------------End of Quick Styleguide Styles---------------*/
 /*---------------Base Styles---------------------------*/
 
+#instafeed{
+    margin-top:40px;
+    margin-bottom:40px;
+}
+
+#instafeed .instafeed_img a img{
+    height:250px;
+    width:250px;
+    padding-right:20px;
+    padding-bottom:8%;
+}
+
+#instafeed .instafeed_img{
+    display:inline-block;
+    height:250px;
+    width:250px;
+    padding-left:5%;
+}
+
 .dropdown-menu{
     position: absolute;
     background-color: #ffffff;
@@ -167,6 +186,32 @@ p{
     width:100vw;
     height:113px;
     background-color: rgba(0,0,0,.83);
+    color:#ffffff;
+    padding-top:2vh;
+}
+
+.inline-display{
+    display:inline-block;
+}
+
+.footer a{
+    text-decoration: none;
+}
+
+.footer h6{
+    margin-bottom:0px;
+}
+
+.footer p{
+    margin-bottom:0px;
+}
+
+.footer-branding h6{
+    padding-top:2vh;
+}
+
+.footer .footer-lower{
+    font-size:12px;
 }
 
 .main-form{
@@ -199,6 +244,7 @@ input[type='submit'], .button-mobile{
     background-color: #5D9CEC;
     border-radius:1px;
     font-size:17px;
+    border:none;
 }
 
 .intro-container{
@@ -224,6 +270,27 @@ input[type='submit'], .button-mobile{
     border-radius:4px;
     margin-bottom: 38px;
     background-image: linear-gradient(to bottom, #5d9cec, #4a89dc);
+    height:48px;
+    width:158px;
+    padding-top:5px;
+    color:#ffffff;
+    font-family: Roboto;
+    font-size:16px;
+}
+
+.intro-button a:hover{
+    box-shadow:0px 0px 3px #333333;
+    color:#ffffff;
+}
+
+.intro-button a:focus{
+    box-shadow:none;
+    color:#ffffff;
+}
+
+.intro-button a:active{
+    box-shadow:inset 0px 0px 5px #333333;
+    color:#ffffff;
 }
 
 .jumbotron{
@@ -413,6 +480,9 @@ input[type='submit'], .button-mobile{
 
 /* Larger than phablet */
 @media (min-width: 550px) {
+
+
+
     .spotlight-photo{
         width:212px;
         height:193px;
@@ -436,7 +506,24 @@ input[type='submit'], .button-mobile{
         width:124px;
         height:221px;
     }
+
     
+}
+
+@media (max-width:700px){
+    #menu{
+        display:none
+    }
+}
+
+
+
+
+@media (max-width:800px){
+     .six.columns{
+        width:85% !important;
+        text-align: center;
+    }
 }
 
 @media (min-width: 750px) {
@@ -477,7 +564,22 @@ input[type='submit'], .button-mobile{
     .page-content p{
        margin:34.5px 0px 0px 0px; 
     }
+
+
 }
+
+@media (max-width: 900px) {
+    .logo{
+        display:none;
+    }
+
+    .six.columns{
+        width:85% !important;
+        text-align: center;
+    }
+}
+
+
 
 @media (min-width: 1000px) {
     .main-form{
@@ -531,3 +633,20 @@ input[type='submit'], .button-mobile{
         padding:0px 123px;
     }
 }
+
+@media (max-width:1310px){
+        .social-nav-buttons{
+        display:none;
+    }
+    
+    .six.columns{
+        width:65%;
+    }
+
+    #menu li a{
+        font-size:18px;
+    }
+}
+
+
+

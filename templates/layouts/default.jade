@@ -23,7 +23,9 @@ html
 		script(src='bower_components/jquery/dist/jquery.min.js')
 		script(src='bower_components/jquery-ui/jquery-ui.min.js')
 		script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+		script(src='js/instafeed.js')
 		script(src='js/custom.js')
+
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
 			link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
@@ -120,10 +122,13 @@ html
 
 
 		//- FOOTER
-		.container: #footer
-
-			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
+		.row
+			.twelve.columns.footer
+				div.footer-branding.inline-display.offset-by-two.four.columns
+					h6 2017 American Top Team OKC 
+				div.credits.inline-display.offset-by-two.four.columns
+					p Developed By:<br> <a href="#">Rawle Juglal</a> and <a href="#">Daniel Ashcraft</a>
+					p.footer-lower Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>
 
 
 		//- JAVASCRIPT

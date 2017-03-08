@@ -1,7 +1,6 @@
 extends ../layouts/default
 
 block content
-  
   .row
     .twelve.columns.jumbotron
       form.main-form
@@ -58,30 +57,9 @@ block content
             h4.center-content.social-works-heading Recent Works
           // End of recent-works
           .twelve.columns.social-frames
-            ul.no-list-1
-              li
-                img(src='images/frame_placeholder.jpg')
-              li
-                img.push-frames(src='images/frame_placeholder.jpg')
-              li
-                img(src='images/frame_placeholder.jpg')
-            ul.no-list-1
-              li
-                img(src='images/frame_placeholder.jpg')
-              li
-                img.push-frames(src='images/frame_placeholder.jpg')
-              li
-                img(src='images/frame_placeholder.jpg')
-            ul.no-list-1
-              li
-                img(src='images/frame_placeholder.jpg')
-              li
-                img.push-frames(src='images/frame_placeholder.jpg')
-              li
-                img(src='images/frame_placeholder.jpg')
+            div#instafeed
         // End of row
       // End of social-works
     // End of social
   // End of container
-  .row
-    .twelve.columns.footer
+
