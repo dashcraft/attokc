@@ -51,6 +51,27 @@ p{
 }
 
 /*---------------End of Quick Styleguide Styles---------------*/
+
+
+/* Secondary navigation for mobile */
+#secondary-menu{
+    display:none;
+    text-align: center;
+}
+
+#secondary-menu ul li{
+    list-style: none;
+}
+
+#secondary-menu ul li a{
+    text-decoration: none;
+}
+
+#secondary-menu ul li a:focus{
+    color:#ffffff;
+}
+
+
 /*---------------Base Styles---------------------------*/
 
 #instafeed{
@@ -93,6 +114,10 @@ p{
 #menu{
     margin-bottom:0;
     padding-top:3vh;
+}
+
+.pull-right{
+    float:right;
 }
 
 #menu li{
@@ -416,8 +441,8 @@ input[type='submit'], .button-mobile{
 
 .staff-bio img{
     margin-bottom: 19.5px;
-    width:224px;
-    height:199px;
+    width:225px;
+    height:auto;
 }
 
 .staff-name{
@@ -426,6 +451,33 @@ input[type='submit'], .button-mobile{
 
 .staff-job{
     margin-bottom:22.5px;
+}
+
+.menu-container{
+    transition: text-align 1s ease-in-out;
+}
+
+#header.sticky {
+    text-align: center;
+    width:100%;
+    position: fixed;
+    top: 0;
+    background-color:#ffffff;
+    transition: all 1s;
+}
+
+#header.sticky .social-nav-buttons{
+    display:none;
+}
+
+#header.sticky .logo{
+    display:none
+}
+
+#header.sticky .menu-container{
+    margin-left:0px;
+    text-align: center;
+    width:100%;
 }
 
 /*-----------------------End of instructor styles---------------------*/
@@ -512,19 +564,34 @@ input[type='submit'], .button-mobile{
 
 @media (max-width:700px){
     #menu{
-        display:none
+        display:none;
     }
-}
 
+    #secondary-menu{
+        display:block;
+        color:#ffffff;
+    }
 
+    #header{
+        height:auto;
+        background-color:rgba(0,0,0,.8);
+    }
 
+    .row{
+        height:auto;
+    }
 
-@media (max-width:800px){
-     .six.columns{
-        width:85% !important;
+    .jumbotron{
+        height:auto;
+    }
+
+    #instafeed{
         text-align: center;
     }
+
 }
+
+
 
 @media (min-width: 750px) {
     .program-form{
@@ -572,11 +639,6 @@ input[type='submit'], .button-mobile{
     .logo{
         display:none;
     }
-
-    .six.columns{
-        width:85% !important;
-        text-align: center;
-    }
 }
 
 
@@ -613,8 +675,8 @@ input[type='submit'], .button-mobile{
     }
     
     .staff-bio img{
-        width:224px;
-        height:199px;
+        width:225px;
+        height:auto;
     }
     
     .long-image{
@@ -635,15 +697,29 @@ input[type='submit'], .button-mobile{
 }
 
 @media (max-width:1310px){
-        .social-nav-buttons{
+    .social-nav-buttons{
         display:none;
     }
     
+
+    #header .menu-container{
+        margin-left:0px;
+        width:100%;
+        text-align: center; 
+    }
+
+    .logo{
+        display:none;
+    }
+
     .six.columns{
         width:65%;
     }
 
     #menu li a{
+        font-size:18px;
+    }
+    #menu li{
         font-size:18px;
     }
 }

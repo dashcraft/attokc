@@ -104,6 +104,10 @@ p {
     margin-bottom: 0;
 }
 
+.pull-right {
+    float: right;
+}
+
 #menu li {
     display: inline-block;
     padding-right: 25px;
@@ -608,8 +612,8 @@ input[type="submit"],
     }
 
     .staff-bio img {
-        width: 176px;
-        height: 156px;
+        width: 225px;
+        height: auto;
     }
 
     .page-content p {

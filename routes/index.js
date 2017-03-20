@@ -31,6 +31,8 @@ var routes = {
 	views: importRoutes('./views'),
 };
 
+
+
 // Setup Route Bindings
 exports = module.exports = function (app) {
 	// Views
@@ -42,8 +44,8 @@ exports = module.exports = function (app) {
 	app.get('/wrestling', routes.views.wrestling);
 	app.get('/kidsbjj', routes.views.kidsbjj);
 	app.get('/blog/:category?', routes.views.blog);
-	app.get('/blog/post/:post', routes.views.post);
-	app.get('/gallery', routes.views.gallery);
+	app.get('/blog/:category/:post', routes.views.post);
+	app.get('/media', routes.views.gallery);
 	app.get('/instructors', routes.views.instructors);
 	app.all('/contact', routes.views.contact);
 

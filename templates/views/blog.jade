@@ -19,7 +19,7 @@ mixin post(post)
 							|  
 			p.remove(style="padding-top:15px;")!= post.content.brief
 		.card-footer
-			a.footer-link(href='/blog/post/' + post.slug) Read More
+			a.footer-link(href='/blog/'+post.categories[0].key+'/' + post.slug) Read More
 
 
 		//- h2: a(href='/blog/post/' + post.slug)= post.title

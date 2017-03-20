@@ -5,7 +5,8 @@ exports = module.exports = function (req, res) {
 
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
-
+	locals.title = "ATT OKC Blog: Learn more about professional MMA, BJJ, Wrestling in Oklahoma city and more!"
+	locals.description = "American Top Team likes to Blog about current events surrounding the sport of MMA, BJJ, and all other combat martial arts!"
 	// Init locals
 	locals.section = 'blog';
 	locals.filters = {
@@ -74,6 +75,7 @@ exports = module.exports = function (req, res) {
 
 		q.exec(function (err, results) {
 			locals.data.posts = results;
+			console.log('results',JSON.stringify(results, null, 4));
 			next(err);
 		});
 	});

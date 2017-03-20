@@ -9,7 +9,8 @@ html
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 		base(href="/")
-		title= title || 'ATT OKC'
+		title= title || 'ATT OKC:  Train in BJJ, Mixed Martial Art, Kickboxing and more here in Oklahoma City!'
+		meta(name="description", content= description || "American Top Team OKC offers World class BJJ, MMA, Kickboxing, Wrestling and NoGi BJJ training. ATT OKC also offers personal fitness and conditioning classes! Come see us today and see why American Top Team is considered one of the Premier MMA training facilities in the world!")
 		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
@@ -23,8 +24,9 @@ html
 		script(src='bower_components/jquery/dist/jquery.min.js')
 		script(src='bower_components/jquery-ui/jquery-ui.min.js')
 		script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
-		script(src='js/instafeed.js')
-		script(src='js/custom.js')
+		script(async,src='js/instafeed.js')
+		script(aync,src='js/custom.js')
+		
 
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
@@ -54,8 +56,34 @@ html
 
 			div(role="navigation").navbar.navbar-default
 				.u-max-full-width.pad_top_twenty
+					#secondary-menu
+							ul.no-list
+									li
+										a(href="#") Schedule
+									li
+										a(href="/contact") Contact Us
+									li 
+										a(href="/instructors") Instructors
+									li
+										a(href="/about_us") History
+									li
+										a(href="/media") Media
+									li 
+										a(href="/bjj") BJJ
+									li
+										a(href="/kickboxing") KickBoxing
+									li
+										a(href="/nogi") No-Gi
+									li
+										a(href="/wrestling") Wrestling
+									li
+										a(href="/kidsbjj") Kids BJJ
+
 					.three.columns.logo
-						img(src='images/logo_placeholder.jpg')
+						.pull-right
+							img(src='images/attokc_logo_resize.png')
+							img(src='images/attokc_banner_resize.jpg')
+
 					.two.columns.social-nav-buttons
 						ul.no-list-1
 							li
@@ -67,7 +95,7 @@ html
 							li
 								a(href='#')
 									img.mini(src='images/favicon.png')
-					.six.offset-by-one.columns
+					.six.offset-by-one.columns.menu-container
 						ul#menu.no-list
 							li
 								a(href="/") Home
@@ -79,7 +107,7 @@ html
 										li
 											a(href="/about_us") History
 										li
-											a(href="/gallery") Media
+											a(href="/media") Media
 							li#toggle-dropdown(style="cursor:pointer;") Programs
 								div.dropdown-menu.hidden
 									ul
