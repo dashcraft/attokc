@@ -1,25 +1,32 @@
 extends ../layouts/default
 
 mixin post(post)
-	.col-md-offset-1.col-md-3.card(data-ks-editable=editable(user, { list: 'Post', id: post.id }),style="display:inline-block;float:left;max-width:400px;min-width:250px;margin-bottom:20px;box-shadow:2px 4px 4px 1px rgba(0,0,0,0.1);")
-		.card-top(style="min-height:250px;")
-			.img-container(style="min-height:250px;")
+	a(href='/blog/'+post.categories[0].key+'/' + post.slug)
+		.img-container(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
+			.effect
 				if post.image.exists
-					img.card-image(src=post._.image.fit(200,250))
-				.card-image-title 
-					h6!= post.title
-		.card-body
-			if post.publishedDate && post.author
-				h6.text-primary Publish by #{post.author.name.first} on #{post._.publishedDate.format('MMMM Do, YYYY')} <br>in: 
-					each cat, i in post.categories
-						a(href='/blog/' + cat.key)= cat.name
-						if i < post.categories.length - 1
-							| , 
-						else
-							|  
-			p.remove(style="padding-top:15px;")!= post.content.brief
-		.card-footer
-			a.footer-link(href='/blog/'+post.categories[0].key+'/' + post.slug) Read More
+					.front(style='background:url('+post._.image.fit(200,250)+');')
+						span: h3!= post.title
+					.back
+						h2!= post.title
+						p!= post.content.brief
+
+
+			//- img(src=post._.image.fit(200,250))
+			//- .img-title
+			//- 	h6!= post.title
+		//- .card-body
+		//- 	if post.publishedDate && post.author
+		//- 		h6.text-primary Publish by #{post.author.name.first} on #{post._.publishedDate.format('MMMM Do, YYYY')} <br>in: 
+		//- 			each cat, i in post.categories
+		//- 				a(href='/blog/' + cat.key)= cat.name
+		//- 				if i < post.categories.length - 1
+		//- 					| , 
+		//- 				else
+		//- 					|  
+		//- 	p.remove(style="padding-top:15px;")!= post.content.brief
+		//- .card-footer
+		//- 	a.footer-link(href='/blog/'+post.categories[0].key+'/' + post.slug) Read More
 
 
 		//- h2: a(href='/blog/post/' + post.slug)= post.title
@@ -94,7 +101,7 @@ block content
 				.col-md-2.col-md-offset-1(style="margin-left:0px;padding-left:20px;")
 					h4 Categories
 					.list-group(style='padding-top: 20px;')
-						ul
+						ul(style='list-style:none;')
 							li: a(href='/blog', class=!data.category ? 'active' : false).list-group-item All Categories 
 							each cat in data.categories
 								li: a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name
