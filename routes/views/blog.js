@@ -44,10 +44,11 @@ exports = module.exports = function (req, res) {
 
 	// Load the current category filter
 	view.on('init', function (next) {
-
+		console.log(req.params.category);
 		if (req.params.category) {
 			keystone.list('PostCategory').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
-				locals.data.category = result.map;
+				locals.data.category = result._id;
+				locals.data.categoryName = result.name;
 				next(err);
 			});
 		} else {

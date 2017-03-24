@@ -628,7 +628,20 @@ input[type="submit"],
 }
 
 
+article {
+    padding-top: 20px;
+    h1 {
+        text-align: center;
+    }
 
+    h6 {
+        text-align: center;
+    }
+}
+
+.image-wrap {
+    text-align: center;
+}
 
 @media (max-width:800px) {
     .six.columns {
@@ -959,7 +972,7 @@ li {
 #blog .blog-card {
     display: inline-block;
     width: calc(96.5% / 4);
-    height: 250px;
+    height: 275px;
     margin: 4px 2px;
 
     cursor: pointer;

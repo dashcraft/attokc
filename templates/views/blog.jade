@@ -12,6 +12,12 @@ mixin post(post)
 	//- 					p!= post.content.brief
 
 	article.blog-card(data-link='/blog/'+post.categories[0].key+'/' + post.slug)
+		meta(property="og:url",content='http://www.facebook.com/sharer/sharer.php?u=http://www.americantopteamokc.com/blog/'+post.categories[0].key+'/' + post.slug+'&title='+post.title)
+		meta(property="og:type",content="website")
+		meta(property="og:title",content='American Top Team OKC |'+post.title)
+		meta(property="og:description",content=post.content.brief)
+		meta(property="og:image",content=post._.image.fit(150,350))
+
 		.blog-card__image
 			img(src=post._.image.fit(150,350))
 		.blog-card__title
@@ -27,8 +33,9 @@ mixin post(post)
 					else
 						|  0 days ago
 			span.blog-card__details--like
-				i.fa.fa-heart
-				|  15
+				a(href='http://www.facebook.com/sharer/sharer.php?u=http://www.americantopteamokc.com/blog/'+post.categories[0].key+'/' + post.slug+'&title='+post.title)
+					i.fa.fa-heart
+					|  15
 			span.blog-card__details--view
 				i.fa.fa-eye
 					|  1259
@@ -73,13 +80,13 @@ mixin post(post)
 
 block intro
 	.row(style="text-align:center;margin-bottom:25px;padding-top:20px;")
-		h1= data.category ? data.category.name : 'Blog'
+		h1= data.category ? data.categoryName : 'Blog'	
 
 block content
 	link(href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css")
 	.container-fluid
 		.row
-			.col-xs-12.col-md-9
+			.ten.columns(style="min-height:900px;")
 				if filters.category && !data.category
 					h3.text-muted Invalid Category.
 				else
@@ -118,7 +125,7 @@ block content
 							h3.text-muted There are no posts yet.
 			
 			if data.categories.length
-				.col-md-2.col-md-offset-1(style="margin-left:0px;padding-left:20px;")
+				.two.columns.offset-by-one(style="margin-left:0px;padding-left:20px;")
 					h4 Categories
 					.list-group(style='padding-top: 20px;')
 						ul(style='list-style:none;')
