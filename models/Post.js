@@ -28,5 +28,13 @@ Post.schema.virtual('content.full').get(function () {
 	return this.content.extended || this.content.brief;
 });
 
+Post.schema.pre('save', function(next) {
+    if (this.publishedDate== null || !this.publishedDate) {
+        this.publishedDate = new Date();
+    }
+    next();
+});
+
+
 Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';
 Post.register();

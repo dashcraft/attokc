@@ -47,7 +47,7 @@ exports = module.exports = function (req, res) {
 
 		if (req.params.category) {
 			keystone.list('PostCategory').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
-				locals.data.category = result;
+				locals.data.category = result.map;
 				next(err);
 			});
 		} else {
@@ -75,7 +75,7 @@ exports = module.exports = function (req, res) {
 
 		q.exec(function (err, results) {
 			locals.data.posts = results;
-			console.log('results',JSON.stringify(results, null, 4));
+			// console.log('results',JSON.stringify(results.results, null, 2));
 			next(err);
 		});
 	});

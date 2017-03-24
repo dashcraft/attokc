@@ -1,15 +1,37 @@
 extends ../layouts/default
 
 mixin post(post)
-	a(href='/blog/'+post.categories[0].key+'/' + post.slug)
-		.img-container(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
-			.effect
-				if post.image.exists
-					.front(style='background:url('+post._.image.fit(200,250)+');')
-						span: h3!= post.title
-					.back
-						h2!= post.title
-						p!= post.content.brief
+	//- a(href='/blog/'+post.categories[0].key+'/' + post.slug)
+	//- 	.img-container(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
+	//- 		.effect
+	//- 			if post.image.exists
+	//- 				.front(style='background:url('+post._.image.fit(200,250)+');')
+	//- 					span: h3!= post.title
+	//- 				.back
+	//- 					h2!= post.title
+	//- 					p!= post.content.brief
+
+	article.blog-card(data-link='/blog/'+post.categories[0].key+'/' + post.slug)
+		.blog-card__image
+			img(src=post._.image.fit(150,350))
+		.blog-card__title
+			p!= post.title
+		.blog-card__details
+			span.blog-card__details--time
+				i.fa.fa-clock-o
+					if post.publishedDate
+						if post.publishedDate >1
+							|  #{moment(Date.now()).diff(moment(post.publishedDate),'days')} days ago
+						else
+							|  #{moment(Date.now()).diff(moment(post.publishedDate),'days')} day ago
+					else
+						|  0 days ago
+			span.blog-card__details--like
+				i.fa.fa-heart
+				|  15
+			span.blog-card__details--view
+				i.fa.fa-eye
+					|  1259
 
 
 			//- img(src=post._.image.fit(200,250))
@@ -54,9 +76,7 @@ block intro
 		h1= data.category ? data.category.name : 'Blog'
 
 block content
-	link(href='bower_components/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
-	script(src='bower_components/bootstrap/dist/js/bootstrap.min.js')
-
+	link(href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css")
 	.container-fluid
 		.row
 			.col-xs-12.col-md-9

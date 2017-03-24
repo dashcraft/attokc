@@ -1,11 +1,8 @@
 extends ../layouts/default
-
-block intro
-	.container
-		h1 Gallery
 	
 block content
 	.container
+		h3(style="margin-left:0.5vw;") Photos
 		if galleries.length
 			each gallery in galleries
 				h2= gallery.name
@@ -21,5 +18,8 @@ block content
 					else
 						each image in gallery.images
 							.col-xs-6.col-sm-4.col-md-3.gallery-image: img(src=image.limit(300,300)).img-rounded
-		else
-			h3.text-muted There are no image galleries yet.
+		#media_instagram_photos
+
+	.container
+		h3(style="margin-left:0.5vw;") Videos
+		#media_instagram_videos

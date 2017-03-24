@@ -14,12 +14,11 @@ html
 		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
-		link(href="/styles/site.css", rel="stylesheet")
 		link(href='https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css', rel="stylesheet")
 		link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
 		link(rel='stylesheet', href='/bower_components/skeleton/css/normalize.css')
 		link(rel='stylesheet', href='/bower_components/skeleton/css/skeleton.css')
-		link(rel='stylesheet', href='styles/attokc-condensed.css')
+		link(href="/styles/site.css", rel="stylesheet")
 		link(rel='icon', type='image/png', href='images/favicon.png')
 		script(src='bower_components/jquery/dist/jquery.min.js')
 		script(src='bower_components/jquery-ui/jquery-ui.min.js')
@@ -47,109 +46,111 @@ html
 
 	//- HTML BODY
 	body
+		.body-container
+			//- HEADER
+			#header
 
-		//- HEADER
-		#header
+				//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
+				//- ... or completely change this header to suit your design.
 
-			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
-			//- ... or completely change this header to suit your design.
+				div(role="navigation")
+					.u-max-full-width.pad_top_twenty
+						#secondary-menu
+							li#secondary-menu-toggle(style="font-size:36px;") MENU
+							ul#secondary-menu-links.no-list.hide
+								a(href="/")
+									li Home
+								a(href="/schedule")
+									li Schedule
+								a(href="/contact")
+									li Contact Us
+								a(href="/instructors")
+									li Instructors
+								a(href="/about_us")
+									li History
+								a(href="/media")
+									li Media
+								a(href="/bjj")
+									li BJJ
+								a(href="/kickboxing")
+									li KickBoxing
+								a(href="/nogi")
+									li No-Gi
+								a(href="/wrestling")
+									li Wrestling
+								a(href="/kidsbjj")
+									li Kids BJJ
 
-			div(role="navigation")
-				.u-max-full-width.pad_top_twenty
-					#secondary-menu
-							ul.no-list
-									li
-										a(href="#") Schedule
-									li
-										a(href="/contact") Contact Us
-									li 
-										a(href="/instructors") Instructors
-									li
-										a(href="/about_us") History
-									li
-										a(href="/media") Media
-									li 
-										a(href="/bjj") BJJ
-									li
-										a(href="/kickboxing") KickBoxing
-									li
-										a(href="/nogi") No-Gi
-									li
-										a(href="/wrestling") Wrestling
-									li
-										a(href="/kidsbjj") Kids BJJ
+						.three.columns.logo
+							div.needless-container
+								a(href="/")
+									img(src='images/attokc_banner_resize.jpg')
 
-					.three.columns.logo
-						.pull-right
-							img(src='images/attokc_logo_resize.png')
-							img(src='images/attokc_banner_resize.jpg')
+						.two.columns.social-nav-buttons
+							ul.no-list-1
+								li
+									a(href='#')
+										img.mini(src='images/facebook-icon.svg')
+								li
+									a(href='#')
+										img.mini(src='images/twitter-icon.svg')
+								li
+									a(href='#')
+										img.mini(src='images/instagram-icon.svg')
+						.six.columns.menu-container
+							ul#menu.no-list
+								li
+									a(href="/") Home
+								li#toggle-dropdown-two(style="cursor:pointer;") About Us
+									div.dropdown-menu-two.hidden
+										ul
+											li 
+												a(href="/instructors") Instructors
+											li
+												a(href="/about_us") History
+											li
+												a(href="/media") Media
+								li#toggle-dropdown(style="cursor:pointer;") Programs
+									div.dropdown-menu.hidden
+										ul
+											li 
+												a(href="/bjj") BJJ
+											li
+												a(href="/kickboxing") KickBoxing
+											li
+												a(href="/nogi") No-Gi
+											li
+												a(href="/wrestling") Wrestling
+											li
+												a(href="/kidsbjj") Kids BJJ
+								li
+									a(href="/schedule") Schedule
+								li
+									a(href="/contact") Contact Us
+								if user
+									if user.canAccessKeystone
+										li: a(href='/keystone') Open Keystone
+										li: a(href='/keystone/signout') Sign Out
+								else
+									li: a(href='/keystone/signin') Sign In
 
-					.two.columns.social-nav-buttons
-						ul.no-list-1
-							li
-								a(href='#')
-									img.mini(src='images/favicon.png')
-							li
-								a(href='#')
-									img.mini(src='images/favicon.png')
-							li
-								a(href='#')
-									img.mini(src='images/favicon.png')
-					.six.offset-by-one.columns.menu-container
-						ul#menu.no-list
-							li
-								a(href="/") Home
-							li#toggle-dropdown-two(style="cursor:pointer;") About Us
-								div.dropdown-menu-two.hidden
-									ul
-										li 
-											a(href="/instructors") Instructors
-										li
-											a(href="/about_us") History
-										li
-											a(href="/media") Media
-							li#toggle-dropdown(style="cursor:pointer;") Programs
-								div.dropdown-menu-init.hidden
-									ul
-										li 
-											a(href="/bjj") BJJ
-										li
-											a(href="/kickboxing") KickBoxing
-										li
-											a(href="/nogi") No-Gi
-										li
-											a(href="/wrestling") Wrestling
-										li
-											a(href="/kidsbjj") Kids BJJ
-							li
-								a(href="#") Schedule
-							li
-								a(href="/contact") Contact Us
-							if user
-								if user.canAccessKeystone
-									li: a(href='/keystone') Open Keystone
-									li: a(href='/keystone/signout') Sign Out
-							else
-								li: a(href='/keystone/signin') Sign In
+			//- NOTE:
+			//- There is no .container wrapping class around body blocks to allow more flexibility in design.
+			//- Remember to include it in your templates when you override the intro and content blocks!
 
-		//- NOTE:
-		//- There is no .container wrapping class around body blocks to allow more flexibility in design.
-		//- Remember to include it in your templates when you override the intro and content blocks!
+			//- The Intro block appears above flash messages (used for temporary information display)
+			block intro
 
-		//- The Intro block appears above flash messages (used for temporary information display)
-		block intro
+			//- Flash messages allow you to display once-off status messages to users, e.g. form
+			//- validation errors, success messages, etc.
+			+flash-messages(messages)
 
-		//- Flash messages allow you to display once-off status messages to users, e.g. form
-		//- validation errors, success messages, etc.
-		+flash-messages(messages)
-
-		//- The content block should contain the body of your template's content
-		block content
+			//- The content block should contain the body of your template's content
+			block content
 
 
-		//- FOOTER
-		.row
-			.twelve.columns.footer
+			//- FOOTER
+			footer.twelve.columns.footer
 				div.footer-branding.inline-display.offset-by-two.four.columns
 					h6 2017 American Top Team OKC 
 				div.credits.inline-display.offset-by-two.four.columns

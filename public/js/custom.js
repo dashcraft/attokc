@@ -2,15 +2,28 @@ $(document).ready(function(){
 	var $window = $(window),
        $stickyEl = $('#header'),
        elTop = $stickyEl.offset().top;
+    if($(document).height() > 1200 && $(document).width() > 700){
+	   	$window.scroll(function() {
+	        $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
+	    });
+	}
 
-   	$window.scroll(function() {
-        $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
-    });
+   	$('article[data-link]').on('click', function(){
+   		console.log($(this).data('link'));
+   		window.location = $(this).data('link');
 
+   	})
+
+
+   	
+
+   	$('#secondary-menu-toggle').on('click',function(){
+		$('#secondary-menu-links').toggleClass('hidden');
+	});
 
 	$('#toggle-dropdown-two').on('mouseenter',function(){
-		if(!$('.dropdown-menu-init').hasClass('hidden')){
-			$('.dropdown-menu-init').toggleClass('hidden');
+		if(!$('.dropdown-menu').hasClass('hidden')){
+			$('.dropdown-menu').toggleClass('hidden');
 		}
 		$('.dropdown-menu-two').removeClass('hidden');
 	});
@@ -24,19 +37,37 @@ $(document).ready(function(){
 		if(!$('.dropdown-menu-two').hasClass('hidden')){
 			$('.dropdown-menu-two').toggleClass('hidden');
 		}
-		$('.dropdown-menu-init').removeClass('hidden');
+		$('.dropdown-menu').removeClass('hidden');
 	});
 
 	$('#toggle-dropdown').on('mouseexit',function(){
-		$('.dropdown-menu-init').addClass('hidden');
+		$('.dropdown-menu').addClass('hidden');
 	});
 
 
 
 
 	$('.row').on('mouseenter',function(){
-		if(!$('.dropdown-menu-init').hasClass('hidden')){
-			$('.dropdown-menu-init').toggleClass('hidden');
+		if(!$('.dropdown-menu').hasClass('hidden')){
+			$('.dropdown-menu').toggleClass('hidden');
+		}
+		if(!$('.dropdown-menu-two').hasClass('hidden')){
+			$('.dropdown-menu-two').toggleClass('hidden');
+		}
+	})
+
+	$('.container').on('mouseenter',function(){
+		if(!$('.dropdown-menu').hasClass('hidden')){
+			$('.dropdown-menu').toggleClass('hidden');
+		}
+		if(!$('.dropdown-menu-two').hasClass('hidden')){
+			$('.dropdown-menu-two').toggleClass('hidden');
+		}
+	})
+
+	$('#attokc_schedule').on('mouseenter',function(){
+		if(!$('.dropdown-menu').hasClass('hidden')){
+			$('.dropdown-menu').toggleClass('hidden');
 		}
 		if(!$('.dropdown-menu-two').hasClass('hidden')){
 			$('.dropdown-menu-two').toggleClass('hidden');
@@ -45,10 +76,8 @@ $(document).ready(function(){
 
 	//	<span>{{likes}}{{comments}}</span> will put instagram photo comment count!!!
 
-	var init = 0;
-	if($('#instafeed').length && init == 0){
-		init+=1;
-		console.log('this has instantiated;')
+	if($('#instafeed').length){
+
 		var userFeed = new Instafeed({
 		    get: 'user',
 		    userId:'4777661928',
@@ -62,5 +91,48 @@ $(document).ready(function(){
 		 });
 	  	userFeed.run();
   	}
+
+
+  	if($('#media_instagram_photos').length){
+
+		var photoFeed = new Instafeed({
+		    get: 'user',
+		    userId:'4777661928',
+		    target:'media_instagram_photos',
+		    clientId: '6cf789de42554f54903d08e66c2c0ef7 ',
+		    accessToken: '4777661928.1677ed0.fe1bc3b9d9564a5391907d0190f16441',
+		    resolution: 'standard_resolution',
+		    template: '<div class="instafeed_img"><a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a></div>',
+		    sortBy: 'most-recent',
+		    links: true,
+		    limit:50,
+		    filter: function(image){
+		    	return image.tags.indexOf('arrows')>=0;
+		    }
+		 });
+	  	photoFeed.run();
+  	}
+
+  	if($('#media_instagram_videos').length){
+
+		var videoFeed = new Instafeed({
+		    get: 'user',
+		    userId:'4777661928',
+		    target:'media_instagram_videos',
+		    clientId: '6cf789de42554f54903d08e66c2c0ef7 ',
+		    accessToken: '4777661928.1677ed0.fe1bc3b9d9564a5391907d0190f16441',
+		    resolution: 'standard_resolution',
+		    template: '<div class="instafeed_video"><a href="{{link}}" target="_blank" id="{{id}}">Link</a><video controls="controls" poster="{{image}}" height="250px"><source src="{{model.videos.standard_resolution.url}}" type="video/mp4"></video> </div>',
+		    sortBy: 'most-recent',
+		    links: true,
+		    limit:50,
+		    filter: function(image){
+		    	return image.tags.indexOf('video')>=0;
+		    }
+		 });
+	  	videoFeed.run();
+  	}
+
+
 
 })
