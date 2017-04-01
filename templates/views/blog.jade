@@ -12,12 +12,6 @@ mixin post(post)
 	//- 					p!= post.content.brief
 
 	article.blog-card(data-link='/blog/'+post.categories[0].key+'/' + post.slug)
-		meta(property="og:url",content='http://www.facebook.com/sharer/sharer.php?u=http://www.americantopteamokc.com/blog/'+post.categories[0].key+'/' + post.slug+'&title='+post.title)
-		meta(property="og:type",content="website")
-		meta(property="og:title",content='American Top Team OKC |'+post.title)
-		meta(property="og:description",content=post.content.brief)
-		meta(property="og:image",content=post._.image.fit(150,350))
-
 		.blog-card__image
 			img(src=post._.image.fit(150,350))
 		.blog-card__title
@@ -33,7 +27,7 @@ mixin post(post)
 					else
 						|  0 days ago
 			span.blog-card__details--like
-				a(href='http://www.facebook.com/sharer/sharer.php?u=http://www.americantopteamokc.com/blog/'+post.categories[0].key+'/' + post.slug+'&title='+post.title)
+				a(href="'https://lychee-sundae-59213.herokuapp.com/'+post.categories[0].key+'/' + post.slug+'&title='+post.title", data-href='https://lychee-sundae-59213.herokuapp.com/'+post.categories[0].key+'/' + post.slug+'&title='+post.title, data-action='share', data-share="true")
 					img(src='images/facebook-icon.svg', height="15px",width="15px")
 			span.blog-card__details--view
 				i.fa.fa-eye
@@ -82,6 +76,10 @@ block intro
 		h1= data.category ? data.categoryName : 'Blog'	
 
 block content
+	meta(property="og:type",content="article")
+	meta(property="og:image",content="http://https://lychee-sundae-59213.herokuapp.com/images/attokc_banner.jpeg")
+	meta(property="og:title",content="American Top Team OKC")
+	meta(property="og:type",content="website")
 	link(href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css")
 	.container-fluid
 		.row
