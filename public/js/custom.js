@@ -7,6 +7,7 @@ $(document).ready(function(){
       version: 'v2.8' // or v2.1, v2.2, v2.3, ...
     });     
     $('#loginbutton,#feedbutton').removeAttr('disabled');
+    FB.AppEvents.logPageView();
   });
   	function updateStatusCallback(res){
   		console.log(res);
