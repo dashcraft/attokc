@@ -5,6 +5,7 @@ exports = module.exports = function (req, res) {
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
 
+
 	// Set locals
 	locals.section = 'blog';
 	locals.filters = {
@@ -23,7 +24,9 @@ exports = module.exports = function (req, res) {
 		}).populate('author categories');
 
 		q.exec(function (err, result) {
+
 			locals.data.post = result;
+			locals.title = result.content.title;
 			locals.description = result.content.brief.replace(/(<p[^>]+?>|<p>|<\/p>)/img, "");;
 			next(err);
 		});

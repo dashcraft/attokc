@@ -13,6 +13,9 @@ exports = module.exports = function (req, res) {
 	locals.validationErrors = {};
 	locals.enquirySubmitted = false;
 
+	locals.title ="ATT OKC BJJ: Come Join Us Today! Affordable Classes in a safe and encouraging environment!";
+	locals.description = "American Top Team OKC has dedicated itself to providing the best environment to grow and learn BJJ, Wrestling, Pro MMA, Boxing, KickBoxing, No-Gi BJJ!";
+
 	// On POST requests, add the Enquiry item to the database
 	view.on('post', { action: 'contact' }, function (next) {
 

@@ -3,7 +3,8 @@ extends ../layouts/default
 block content
   .row
     .twelve.columns.jumbotron
-      form.main-form
+      form(method="post").main-form
+        input(type='hidden', name='action', value='contact')
         .row
           .offset-by-two.eight.columns
             h2.form-heading.center-content
@@ -12,11 +13,11 @@ block content
               |  Today
           // twelve columns
           .offset-by-one.ten.columns.center-content
-            input#nameInput(type='text', placeholder='First & Last Name')
+            input#nameInput(type='text', name='name.full', value=formData['name.full'], placeholder='First & Last Name')
           .offset-by-one.ten.columns.center-content
-            input#emailInput(type='email', placeholder='Email')
+            input#emailInput(type='email',name='email', value=formData.email, placeholder='Email')
           .offset-by-one.ten.columns.center-content
-            input#phoneInput(type='tel', placeholder='Phone Number')
+            input#phoneInput(type='tel', name='phone', value=formData.phone, placeholder='Phone Number')
           .offset-by-one.ten.columns.center-content
             input.button(type='submit', value='START TRAINING TODAY')
         // End of row

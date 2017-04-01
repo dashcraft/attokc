@@ -16,11 +16,12 @@ Enquiry.add({
 	email: { type: Types.Email, required: true },
 	phone: { type: String },
 	enquiryType: { type: Types.Select, options: [
+		{ value: 'Join', label: 'I want to join!'},
 		{ value: 'message', label: 'Just leaving a message' },
 		{ value: 'question', label: 'I\'ve got a question' },
 		{ value: 'other', label: 'Something else...' },
 	] },
-	message: { type: Types.Markdown, required: true },
+	message: { type: Types.Markdown, required: false },
 	createdAt: { type: Date, default: Date.now },
 });
 
