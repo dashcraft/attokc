@@ -8,10 +8,35 @@ $(document).ready(function(){
       version: 'v2.8' // or v2.1, v2.2, v2.3, ...
     });     
     FB.AppEvents.logPageView();
+
+
+  	$('.fb-custom').on('click',function(){
+  		var str = $(this).data('super');
+ 		customShare(str);
+  	})
+
+
+    function customShare(thisurl){
+  		console.log('inside of custom share',thisurl);
+  		thisurl = 'https://lychee-sundae-59213.herokuapp.com/blog/'+thisurl;
+
+  		FB.ui({
+            method: 'share',
+            href: thisurl,
+        });
+
+  	}
   });
+
+
+
+
   	function updateStatusCallback(res){
   		console.log(res);
   	}
+
+
+  	
 
 	var $window = $(window),
        $stickyEl = $('#header'),
@@ -22,9 +47,11 @@ $(document).ready(function(){
 	    });
 	}
 
-   	$('article[data-link]').on('click', function(){
+   	$('.blog-card__image[data-link]').on('click', function(){
    		console.log($(this).data('link'));
    		window.location = $(this).data('link');
+  
+
 
    	})
 

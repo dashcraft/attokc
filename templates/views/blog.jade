@@ -11,8 +11,8 @@ mixin post(post)
 	//- 					h2!= post.title
 	//- 					p!= post.content.brief
 
-	article.blog-card(data-link='/blog/'+post.categories[0].key+'/' + post.slug)
-		.blog-card__image
+	article.blog-card
+		.blog-card__image(data-link='/blog/'+post.categories[0].key+'/' + post.slug)
 			img(src=post._.image.fit(150,350))
 		.blog-card__title
 			p!= post.title
@@ -27,7 +27,7 @@ mixin post(post)
 					else
 						|  0 days ago
 			span.blog-card__details--like
-				a(data-href='https://lychee-sundae-59213.herokuapp.com/'+post.categories[0].key+'/' + post.slug+'&title='+post.title, data-action='share', data-share="true")
+				.fb-custom(data-action='share', data-share="true",data-super=post.categories[0].key+'/' + post.slug)
 					img(src='images/facebook-icon.svg', height="15px",width="15px")
 			span.blog-card__details--view
 				i.fa.fa-eye
