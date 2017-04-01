@@ -16,10 +16,10 @@ exports = module.exports = function (req, res) {
 		posts: [],
 		categories: [],
 	};
-
-	local.meta.image = 'http://lychee-sundae-59213.herokuapp.com/images/attokc_banner.jpeg';
-	local.meta.title = 'American Top Team OKC';
-	local.meta.type = "Article";
+	locals.meta = {};
+	locals.meta.image = 'http://lychee-sundae-59213.herokuapp.com/images/attokc_banner.jpeg';
+	locals.meta.title = 'American Top Team OKC';
+	locals.meta.type = "Article";
 
 
 	// Load all categories
