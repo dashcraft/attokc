@@ -4,7 +4,7 @@ $(document).ready(function(){
   	$.getScript('//connect.facebook.net/en_US/sdk.js', function(){
     FB.init({
       appId: '1351787568192332',
-      version: 'v2.7' // or v2.1, v2.2, v2.3, ...
+      version: 'v2.8' // or v2.1, v2.2, v2.3, ...
     });     
     $('#loginbutton,#feedbutton').removeAttr('disabled');
     FB.getLoginStatus(updateStatusCallback);
