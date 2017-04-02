@@ -11,6 +11,16 @@ body {
     min-height: 100%;
 }
 
+.jumbotron {
+    height: 100%;
+    padding-top: 90px;
+
+    background: url("/images/attokc_banner.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 h1,
 h2,
 h3,
@@ -275,7 +285,6 @@ p {
     width: 300px;
     height: 402.5px;
     margin: 0 auto;
-    margin-top: 68.5px;
 
     background-color: rgba(0,0,0,.8);
 }
@@ -364,7 +373,6 @@ input[type="submit"],
 .jumbotron {
     height: 85vh;
 
-    background: url("../images/jumbotron_placeholder.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
        -moz-background-size: cover;
          -o-background-size: cover;

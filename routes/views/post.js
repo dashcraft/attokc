@@ -24,7 +24,7 @@ exports = module.exports = function (req, res) {
 		}).populate('author categories');
 
 		q.exec(function (err, result) {
-
+			
 			locals.data.post = result;
 			locals.title = result.content.title;
 			locals.description = result.content.brief.replace(/(<p[^>]+?>|<p>|<\/p>)/img, "");;
