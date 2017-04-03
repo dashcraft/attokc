@@ -168,7 +168,7 @@ p {
 /*------------------End of base styles---------------*/
 /*------------------Main Styles---------------------*/
 .footer {
-  position: absolute;
+  position: relative;
   right: 0;
   bottom: 0;
   left: 0;
