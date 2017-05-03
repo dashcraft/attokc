@@ -11,7 +11,7 @@ mixin post(post)
 	//- 					h2!= post.title
 	//- 					p!= post.content.brief
 
-	article.blog-card
+	article.blog-card(id=post._id)
 		.blog-card__image(data-link='/blog/'+post.categories[0].key+'/' + post.slug)
 			img(src=post._.image.fit(150,350))
 		.blog-card__title
@@ -31,7 +31,8 @@ mixin post(post)
 					img(src='images/facebook-icon.svg', height="15px",width="15px")
 			span.blog-card__details--view
 				i.fa.fa-eye
-					|  1259
+					|  
+			
 
 
 			//- img(src=post._.image.fit(200,250))
@@ -125,3 +126,23 @@ block content
 							li: a(href='/blog', class=!data.category ? 'active' : false).list-group-item All Categories 
 							each cat in data.categories
 								li: a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name
+	script(type='text/javascript').
+				var local_data =!{JSON.stringify(data)}
+				console.log(local_data);
+				local_data.posts.results.forEach(function(post){
+					console.log('this post is', post);
+					var postId = '#'+post._id;
+					var fullposturl = 'http://lychee-sundae-59213.herokuapp.com/blog/'+post.categories[0].name+'/'+post.slug;
+					$.get('http://graph.facebook.com/?fields=og_object%7Blikes.summary(true).limit(0)%7D,share&id='+fullposturl).then(function(res){
+						if(res.og_objects){
+							console.log('response from facebook is ',res);
+							$(postId+' i.fa.fa-eye').append(res.og_objects.likes.summary.total_count);
+						}
+						else{
+							$(postId+' i.fa.fa-eye').append('0');
+						}
+					})
+
+				})
+
+				

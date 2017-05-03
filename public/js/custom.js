@@ -121,9 +121,9 @@ $(document).ready(function(){
 
 		var userFeed = new Instafeed({
 		    get: 'user',
-		    userId:'4777661928',
+		    userId:'4724226110',
 		    clientId: '6cf789de42554f54903d08e66c2c0ef7 ',
-		    accessToken: '4777661928.1677ed0.fe1bc3b9d9564a5391907d0190f16441',
+		    accessToken: '4724226110.1677ed0.f21f7abbc50a47eda85dacaebfd88a2e',
 		    resolution: 'standard_resolution',
 		    template: '<div class="instafeed_img"><a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a></div>',
 		    sortBy: 'most-recent',
@@ -138,37 +138,45 @@ $(document).ready(function(){
 
 		var photoFeed = new Instafeed({
 		    get: 'user',
-		    userId:'4777661928',
+		    userId:'4724226110',
 		    target:'media_instagram_photos',
 		    clientId: '6cf789de42554f54903d08e66c2c0ef7 ',
-		    accessToken: '4777661928.1677ed0.fe1bc3b9d9564a5391907d0190f16441',
+		    accessToken: '4724226110.1677ed0.f21f7abbc50a47eda85dacaebfd88a2e',
 		    resolution: 'standard_resolution',
 		    template: '<div class="instafeed_img"><a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a></div>',
 		    sortBy: 'most-recent',
 		    links: true,
 		    limit:50,
-		    filter: function(image){
-		    	return image.tags.indexOf('arrows')>=0;
+		    filter:function(image){
+		    	
+		    	return image.type="image";
+		    },
+		    after:function(){
+		    	photoFeed.next();
 		    }
+		    
 		 });
 	  	photoFeed.run();
   	}
 
   	if($('#media_instagram_videos').length){
-
+  		var arr = [];
 		var videoFeed = new Instafeed({
 		    get: 'user',
-		    userId:'4777661928',
+		    userId:'4724226110',
 		    target:'media_instagram_videos',
 		    clientId: '6cf789de42554f54903d08e66c2c0ef7 ',
-		    accessToken: '4777661928.1677ed0.fe1bc3b9d9564a5391907d0190f16441',
-		    resolution: 'standard_resolution',
-		    template: '<div class="instafeed_video"><a href="{{link}}" target="_blank" id="{{id}}">Link</a><video controls="controls" poster="{{image}}" height="250px"><source src="{{model.videos.standard_resolution.url}}" type="video/mp4"></video> </div>',
-		    sortBy: 'most-recent',
+		    accessToken: '4724226110.1677ed0.f21f7abbc50a47eda85dacaebfd88a2e',
+		    template: '<div class="instafeed_video" style="max-width:100%;"><a href="{{link}}" target="_blank" id="{{id}}">Link</a><video controls="controls" poster="{{image}}" height="250px" style="max-width:400px"><source src="{{model.videos.standard_resolution.url}}" type="video/mp4"></video> </div>',
+		    
 		    links: true,
-		    limit:50,
+		    limit:100,
 		    filter: function(image){
-		    	return image.tags.indexOf('video')>=0;
+		    	arr.push(image);
+		    	return image.type == 'video';
+		    },
+		    after: function(){
+		    	videoFeed.next();
 		    }
 		 });
 	  	videoFeed.run();

@@ -7,6 +7,7 @@
     "bower": "^1.8.0",
     "dotenv": "^2.0.0",
     "ejs-locals": "^1.0.2",
+    "fb": "^1.1.1",
     "jade": "^1.11.0",
     "keystone": "latest",
     "keystone-email": "^1.0.5",

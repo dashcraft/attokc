@@ -1,5 +1,6 @@
 var keystone = require('keystone');
 var async = require('async');
+var http = require('http');
 
 exports = module.exports = function (req, res) {
 
