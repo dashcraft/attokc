@@ -15,6 +15,10 @@ body {
   background-position: center;
   background-size: cover; }
 
+#contact_container {
+  min-height: 640px;
+  padding-top: 40px; }
+
 h1,
 h2,
 h3,

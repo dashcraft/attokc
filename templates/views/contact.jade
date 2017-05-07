@@ -1,11 +1,11 @@
 extends ../layouts/default
 
 block intro
-	.container
+	.container(style="padding-top:40px;padding-bottom:20px;")
 		h1 Contact Us
 		
 block content
-	.container
+	.container#contact_container
 		if enquirySubmitted
 			h3 Thanks for getting in touch.
 		else
